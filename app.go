@@ -37,7 +37,7 @@ func Start(scene IScene,width, height int, title string) error {
 	screenHeight = height
 	appTitle = title
 	ebiten.SetRunnableInBackground(true)
-
+	
 	ret := ebiten.Run(update,screenWidth,screenHeight,1,appTitle)
 	return ret
 }
@@ -48,6 +48,7 @@ func Goto(scene IScene) error {
 		fmt.Println(err)
 		return err
 	}
+	
 	currScene = scene
 	return nil
 }
