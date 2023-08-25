@@ -9,10 +9,12 @@ import (
 type INode interface {
 	GetUUID() int64
 	GetPosition() Vector
+	SetPosition(v Vector)
 	GetRotato() float64
 
 	SetParent(parent INode)
 	DetachParent()
+	Destroy()
 	GetTreeNode() *TreeNode
 	SetTreeNode(*TreeNode)
 	//GetParent()INode
@@ -197,6 +199,6 @@ func (node *BaseNode) Draw(target *ebiten.Image) {
 	//do nothing
 }
 
-func  (node *BaseNode) Destory()  {
+func  (node *BaseNode) Destroy()  {
 	node.DetachParent()
 }

@@ -62,6 +62,7 @@ func (sp *Sprite) Draw(target *ebiten.Image) {
 	sw,sh := sp.image.Size()
 	if sp.spriteType==SpriteTypeSingle {
 		sp.opt.GeoM.Scale(sp.scale.X*sp.size.X/float64(sw),sp.scale.Y*sp.size.Y/float64(sh))
+		//sp.opt.GeoM.Translate(-float64(sp.size.X)*sp.anchor.X, -float64(sp.size.Y)*sp.anchor.Y)
 		sp.opt.GeoM.Translate(-float64(sp.size.X)/2, -float64(sp.size.Y)/2)
 		sp.opt.GeoM.Rotate(math.Pi * float64(sp.rotate) /180)
 		sp.opt.GeoM.Translate(sp.position.X, sp.position.Y)

@@ -107,7 +107,8 @@ func (sp *AniSprite) Draw(target *ebiten.Image) {
 	sp.opt.GeoM.Reset()
 
 	sp.opt.GeoM.Scale(sp.scale.X,sp.scale.Y)
-	sp.opt.GeoM.Translate(-w/2, -h/2)
+	//sp.opt.GeoM.Translate(-w/2, -h/2)
+	sp.opt.GeoM.Translate(-w*sp.anchor.X, -h*sp.anchor.Y)
 	sp.opt.GeoM.Rotate(math.Pi * float64(sp.rotate) /180)
 
 	sp.opt.GeoM.Translate(sp.position.X, sp.position.Y)
